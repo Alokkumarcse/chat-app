@@ -1,13 +1,14 @@
-/** step1: express module required to create express server */
+/** step1: import express module to create express server */
 const express = require("express");
 
-/** step2: execute the express() method which is create an web server
+/** step2: create instance of express which is create an web server
  * and user can interact with web browser.
  * web application is underlying part of web server which is process the user request come through web server and
  * return the response to web server and webserver return response to user's browser.
  */
 const app = express();
 
+// select port number where express server run
 const port = 8000;
 
 /** server home router */

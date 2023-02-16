@@ -4,7 +4,7 @@
   "description": "React Chat Application",
   "main": "server.js",
   "scripts": {
-    "start":"backend/server.js"
+    "start": "backend/server.js"
   },
   "author": "Alok Kumar",
   "license": "ISC",
