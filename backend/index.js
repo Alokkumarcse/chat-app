@@ -20,5 +20,10 @@ app.get("/api/chat", (req, res) => {
 	res.send(chats);
 });
 
+/** Get single chat data, api endpoint = /api/chat/id */
+app.get("/api/chat/:id", (req, res) => {
+	console.log(req);
+});
+
 /** listen(port, callback) method take  */
 app.listen(port, console.log(`server is up and running on ${port}`));
