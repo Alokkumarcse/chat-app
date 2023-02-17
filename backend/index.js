@@ -1,15 +1,17 @@
 /** step1: import express module to create express server */
 const express = require("express");
+
+/** include dotenv file to hide sensitive data  and manage the constant across the project*/
+const dotenv = require("dotenv");
+dotenv.config();
+
+/** importing dummy chat data file */
 const { chats } = require("./data/data");
 
 /** step2: create instance of express web server,.e app. Which will help to create express api. */
 const app = express();
 
-/** select port number where our express server run */
-const port = 3000;
-
 /** Create express api, http request methods get() , post(), put(), patch(), delete() */
-
 /** Home page api endpoint = "/" */
 app.get("/", (req, res) => {
 	res.send("Api is working");
@@ -27,5 +29,7 @@ app.get("/api/chat/:id", (req, res) => {
 	singleChat ? res.send(singleChat) : res.send("Data not found");
 });
 
+/** select port number where our express server run */
+const PORT = process.env.PORT || 5000;
 /** listen(port, callback) method take  */
-app.listen(port, console.log(`server is up and running on ${port}`));
+app.listen(PORT, console.log(`server is up and running on ${PORT}`));
