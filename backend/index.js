@@ -22,7 +22,9 @@ app.get("/api/chat", (req, res) => {
 
 /** Get single chat data, api endpoint = /api/chat/id */
 app.get("/api/chat/:id", (req, res) => {
-	console.log(req);
+	// console.log(req.params.id);
+	const singleChat = chats.find((chat) => chat._id === req.params.id) || null;
+	singleChat ? res.send(singleChat) : res.send("Data not found");
 });
 
 /** listen(port, callback) method take  */
