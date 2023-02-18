@@ -1,4 +1,4 @@
-/** single chat contains these fields :
+/** chat schema contains mainly these fields :
  * 1. chat name.
  * 2. isGroupChat.
  * 3. list of users: if single chat than 2 users, if group chat than more than 2 users so make array of users [users].
@@ -31,12 +31,12 @@ const chatSchema = mongoose.Schema(
 	},
 
 	{
-		timeStamps: true,
+		timestamps: true,
 	}
 );
 
 /** Create Chat model using chatSchema */
 const Chat = mongoose.model("chat", chatSchema);
 
-/** Export the Chat module */
+/** Export the Chat model */
 module.exports = Chat;
