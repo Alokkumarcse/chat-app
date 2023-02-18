@@ -4,12 +4,14 @@
   "description": "React Chat Application",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/index.js",
+    "start": "nodemon backend/index.js",
     "server": "nodemon backend/index.js"
   },
   "author": "Alok Kumar",
   "license": "ISC",
+  
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "nodemon": "^2.0.20"

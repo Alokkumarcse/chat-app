@@ -1,5 +1,6 @@
 /** step1: import express module to create express server */
 const express = require("express");
+const cors = require("cors");
 
 /** include dotenv file to hide sensitive data  and manage the constant across the project*/
 const dotenv = require("dotenv");
@@ -10,6 +11,15 @@ const { chats } = require("./data/data");
 
 /** step2: create instance of express web server,.e app. Which will help to create express api. */
 const app = express();
+
+/** enable cross-origin-resource-sharing (cors) using cors() middleware library
+ * and allow the all, specific origin to access the resource.
+ */
+app.use(
+	cors({
+		origin: "http://localhost:3000",
+	})
+);
 
 /** Create express api, http request methods get() , post(), put(), patch(), delete() */
 /** Home page api endpoint = "/" */
