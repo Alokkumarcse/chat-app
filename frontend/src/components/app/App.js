@@ -1,9 +1,10 @@
 import { Route, Switch } from "react-router-dom";
-import "./App.css";
 
-import HomePage from "./Pages/HomePage";
-import ChatPage from "./Pages/ChatPage";
-import Page404 from "./Pages/Page404";
+import "../../styles/App.css";
+
+import HomePage from "../../Pages/HomePage";
+import ChatPage from "../../Pages/ChatPage";
+import Page404 from "../../Pages/Page404";
 
 function App() {
 	return (

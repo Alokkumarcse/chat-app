@@ -9,7 +9,7 @@ dotenv.config();
 /** importing dummy chat data file */
 const { chats } = require("./data/data");
 
-/** step2: create instance of express web server,.e app. Which will help to create express api. */
+/** step2: create instance of express web server,i.e app. Which will help to create express api, middleware etc. */
 const app = express();
 
 /** enable cross-origin-resource-sharing (cors) using cors() middleware library
