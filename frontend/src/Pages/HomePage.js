@@ -1,5 +1,9 @@
 import React from "react";
 
+// import form components
+import Login from "../components/authentication/Login";
+import Signup from "../components/authentication/Signup";
+
 // Chakra ui components
 import {
 	Container,
@@ -23,7 +27,7 @@ const HomePage = () => {
 				bg="white"
 				width="100%"
 				margin="40px 0 15px 0"
-				borderRadius="3xl"
+				borderRadius="2xl"
 				borderWidth="1px"
 			>
 				<Text fontSize="3xl" fontFamily="work sans" color="blackAlpha">
@@ -31,7 +35,7 @@ const HomePage = () => {
 				</Text>
 			</Box>
 
-			{/* login and signup form */}
+			{/* login and signup Tabs  */}
 			<Box
 				bg="white"
 				width="100%"
@@ -45,11 +49,13 @@ const HomePage = () => {
 						<Tab width="50%">Sign Up</Tab>
 					</TabList>
 					<TabPanels>
+						{/* Login component  */}
 						<TabPanel>
-							<p>one!</p>
+							<Login />
 						</TabPanel>
+						{/* Signup component */}
 						<TabPanel>
-							<p>two!</p>
+							<Signup />
 						</TabPanel>
 					</TabPanels>
 				</Tabs>
