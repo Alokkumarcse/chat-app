@@ -1,10 +1,17 @@
 /** step1: import express module to create express server */
 const express = require("express");
 const cors = require("cors");
+const color = require("colors");
+
+/** import connectDB() from config to connect the database */
+const connectDB = require("./config/db");
 
 /** include dotenv file to hide sensitive data  and manage the constant across the project*/
 const dotenv = require("dotenv");
 dotenv.config();
+
+/** invoke the connectDB() method */
+connectDB();
 
 /** importing dummy chat data file */
 const { chats } = require("./data/data");
@@ -42,4 +49,7 @@ app.get("/api/chat/:id", (req, res) => {
 /** select port number where our express server run */
 const PORT = process.env.PORT || 5000;
 /** listen(port, callback) method take  */
-app.listen(PORT, console.log(`server is up and running on ${PORT}`));
+app.listen(
+	PORT,
+	console.log(`server is up and running on ${PORT}`.yellow.bold)
+);
