@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const color = require("colors");
 
+const userRoutes = require("./routes/userRoutes");
+
 /** import connectDB() from config to connect the database */
 const connectDB = require("./config/db");
 
@@ -45,6 +47,9 @@ app.get("/api/chat/:id", (req, res) => {
 	const singleChat = chats.find((chat) => chat._id === req.params.id) || null;
 	singleChat ? res.send(singleChat) : res.send("Data not found");
 });
+
+/** using user routes to communicate with DB */
+app.use("/api/user", userRoutes);
 
 /** select port number where our express server run */
 const PORT = process.env.PORT || 5000;
